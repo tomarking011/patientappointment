@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: docker-k8-demo-demo-deployment
+   labels:
+   app: docker-k8-demo
+spec:
+   replicas: 1
+   selector:
+    matchLabels:
+      app: docker-k8-demo
+    spec:
+       containers:
+        - name: docker-k8-demo
+          image: anubhav011/anu
+          ports: 
+          -  containerPort: 8080  
+      
